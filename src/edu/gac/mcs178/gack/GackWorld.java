@@ -24,6 +24,9 @@ public class GackWorld extends World {
 		Place dormitory = new Place("Dormitory");
 		Place pond = new Place("Pond");
 		
+		// add new place Lund
+		Place lund = new Place("Lund");
+		
 		foodService.addNewNeighbor("down", po);
 		po.addNewNeighbor("south", alumniHall);
 		alumniHall.addNewNeighbor("north", foodService);
@@ -42,6 +45,10 @@ public class GackWorld extends World {
 		lounge.addNewNeighbor("south", offices);
 		computerLab.addNewNeighbor("east", lounge);
 		offices.addNewNeighbor("north", lounge);
+		
+		// add lund as a neighbor to dormitory
+		dormitory.addNewNeighbor("northwest", lund);
+		lund.addNewNeighbor("southeast", dormitory);
 		
 		new AutoPerson("Max", offices, 2);
 		new AutoPerson("Karl", computerLab, 4);
