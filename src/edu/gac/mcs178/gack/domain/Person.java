@@ -113,7 +113,6 @@ public class Person {
 		// if the thing’s owner is you (meaning you already own it)
 		if (this.equals(thing.getOwner())){
 
-			
 			// player no longer owns thing
 			this.possessions.remove(thing);
 			// Thing needs to identify recipient as the owner    
