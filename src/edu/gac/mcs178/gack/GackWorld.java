@@ -23,9 +23,7 @@ public class GackWorld extends World {
 		Place offices = new Place("Offices");
 		Place dormitory = new Place("Dormitory");
 		Place pond = new Place("Pond");
-		
-		// add new place Lund
-		Place lund = new Place("Lund");
+	
 		
 		foodService.addNewNeighbor("down", po);
 		po.addNewNeighbor("south", alumniHall);
@@ -46,20 +44,12 @@ public class GackWorld extends World {
 		computerLab.addNewNeighbor("east", lounge);
 		offices.addNewNeighbor("north", lounge);
 		
-		// add lund as a neighbor to dormitory
-		dormitory.addNewNeighbor("northwest", lund);
-		lund.addNewNeighbor("southeast", dormitory);
-		
+
 		new AutoPerson("Max", offices, 2);
 		new AutoPerson("Karl", computerLab, 4);
 		new Witch("Barbara", offices, 3, pond);
 		new Wizard("Elvee", offices, 1, chamberOfWizards);
 		
-		// add a new witch
-		new Witch("Jacob", lund, 2, pond);
-		// add a new neighbor for the library
-		lund.addNewNeighbor("south",library);
-		library.addNewNeighbor("south",lund);
 		
 		lounge.gain(new Thing("Karl's glasses"));
 		
@@ -72,9 +62,7 @@ public class GackWorld extends World {
 		computerLab.gain(new Scroll("NeXT User's Reference"));
 		
 		dormitory.gain(new Scroll("Late Lab Report"));
-		//add new scroll
-		lund.gain(new Scroll("Louis Don't Barf Magical Enchantment"));
-		
+
 		
 		setPlayer(new Person("player", dormitory));
 	}
