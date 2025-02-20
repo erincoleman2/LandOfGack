@@ -1,5 +1,6 @@
 package edu.gac.mcs178.gack.domain;
 
+import edu.gac.mcs178.gack.Utility;
 
 public class EnlightenmentScroll extends MagicScroll {
 
@@ -10,11 +11,19 @@ public class EnlightenmentScroll extends MagicScroll {
 	}
 
 	@Override
-	void magicalEffect() {
+	void doMagic() {
+	
+	
 		
-		//TODO write body
-		// person gets a magic power added to their possessions
-		this.getOwner().addMagicalPower("");
+		// if the owner of the scroll is in the computer lab
+		if (this.getOwner().getPlace().getName() == "Computer Lab") {
+			// display a message saying you understand compsci
+			Utility.displayMessage("Congratulations, you understand computer science now!");
+		}
+		else {
+			// display a message saying to try somewhere else
+			Utility.displayMessage("Maybe try this in another location...");
+		}
 		
 	}
 

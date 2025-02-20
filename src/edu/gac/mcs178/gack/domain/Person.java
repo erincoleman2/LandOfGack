@@ -16,7 +16,7 @@ public class Person {
 	public void setName(String name) { this.name = name; }
 	public Place getPlace() { return place; }
 	public List<Thing> getPossessions() { return possessions; }
-	public List<String> getPowers() { return magicalPowers; }
+
 	
 	public Person(String name, Place place) {
 		super();
@@ -151,7 +151,5 @@ public class Person {
 		return name;
 	}
 	
-	public void addMagicalPower(String powerName) {
-		this.magicalPowers.add(powerName);
-	}
+	
 }

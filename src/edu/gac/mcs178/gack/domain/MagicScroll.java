@@ -18,7 +18,7 @@ public abstract class MagicScroll extends Scroll {
 		
 		if (numUses>0) {
 		
-		magicalEffect();
+		doMagic();
 		numUses-=1;
 		}
 		else {
@@ -26,7 +26,7 @@ public abstract class MagicScroll extends Scroll {
 		}
 	}
 
-	abstract void magicalEffect();
+	abstract void doMagic();
 	
 
 
