@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import edu.gac.mcs178.gack.Utility;
+import edu.gac.mcs178.gack.World;
 
 public class Place {
 	
@@ -13,6 +14,7 @@ public class Place {
 	private Map<String, Place> neighborMap;
 	private List<Thing> contents;
 	private List<Person> occupants;
+	private World world;
 	
 	public String getName() { return name; }
 	public void setName(String name) { this.name = name; }
@@ -25,7 +27,26 @@ public class Place {
 		this.neighborMap = new HashMap<String, Place>();
 		this.contents = new ArrayList<Thing>();
 		this.occupants = new ArrayList<Person>();
+		this.world = new World();
 	}
+	
+	public Place(String name, World world) {
+		// another constructor for Place, 
+		//allows the world to make a list of which places exist
+		super();
+		this.name = name;
+		this.neighborMap = new HashMap<String, Place>();
+		this.contents = new ArrayList<Thing>();
+		this.occupants = new ArrayList<Person>();
+		world.addLocation(this);
+		this.world= world;
+		
+	}
+	
+	public World getWorld() {
+		return this.world;
+	}
+	
 	
 	public List<String> exits() {
 		return new ArrayList<String>(neighborMap.keySet());

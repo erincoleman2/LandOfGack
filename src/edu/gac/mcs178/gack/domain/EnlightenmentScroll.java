@@ -14,6 +14,7 @@ public class EnlightenmentScroll extends MagicScroll {
 	void doMagic() {
 	
 	
+	
 		
 		// if the owner of the scroll is in the computer lab
 		if (this.getOwner().getPlace().getName() == "Computer Lab") {

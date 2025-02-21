@@ -4,6 +4,7 @@ import edu.gac.mcs178.gack.domain.AutoPerson;
 import edu.gac.mcs178.gack.domain.Person;
 import edu.gac.mcs178.gack.domain.Place;
 import edu.gac.mcs178.gack.domain.Scroll;
+import edu.gac.mcs178.gack.domain.TeleportationScroll;
 import edu.gac.mcs178.gack.domain.EnlightenmentScroll;
 import edu.gac.mcs178.gack.domain.Thing;
 import edu.gac.mcs178.gack.domain.Witch;
@@ -14,17 +15,19 @@ public class GackWorld extends World {
 	
 	public GackWorld() {
 		super();
-		Place foodService = new Place("Food Service");
-		Place po = new Place("Post Office");
-		Place alumniHall = new Place("Alumni Hall");
-		Place chamberOfWizards = new Place("Chamber of Wizards");
-		Place library = new Place("Library");
-		Place goodShipOlin = new Place("Good Ship Olin");
-		Place lounge = new Place("Lounge");
-		Place computerLab = new Place("Computer Lab");
-		Place offices = new Place("Offices");
-		Place dormitory = new Place("Dormitory");
-		Place pond = new Place("Pond");
+		
+		
+		Place foodService = new Place("Food Service", this);
+		Place po = new Place("Post Office", this);
+		Place alumniHall = new Place("Alumni Hall", this);
+		Place chamberOfWizards = new Place("Chamber of Wizards", this);
+		Place library = new Place("Library", this);
+		Place goodShipOlin = new Place("Good Ship Olin", this);
+		Place lounge = new Place("Lounge", this);
+		Place computerLab = new Place("Computer Lab", this);
+		Place offices = new Place("Offices", this);
+		Place dormitory = new Place("Dormitory", this);
+		Place pond = new Place("Pond", this);
 	
 		
 		foodService.addNewNeighbor("down", po);
@@ -55,7 +58,7 @@ public class GackWorld extends World {
 		
 		lounge.gain(new Thing("Karl's glasses"));
 		
-		computerLab.gain(new EnlightenmentScroll("Scroll of Enlightenment", 2));
+		library.gain(new EnlightenmentScroll("Scroll of Enlightenment", 2));
 		
 		String[] someTitles = {"War and Peace", "Iliad", "Collected Works of Rilke"};
 		for (String title : someTitles) {
@@ -65,8 +68,10 @@ public class GackWorld extends World {
 		computerLab.gain(new Scroll("NeXT User's Reference"));
 		
 		dormitory.gain(new Scroll("Late Lab Report"));
+		
+		dormitory.gain(new TeleportationScroll("Scroll of Teleportation", 2));
 
 		
-		setPlayer(new Person("player", computerLab));
+		setPlayer(new Person("player", dormitory));
 	}
 }
