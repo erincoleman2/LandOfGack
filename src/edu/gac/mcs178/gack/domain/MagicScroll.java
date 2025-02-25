@@ -6,6 +6,7 @@ public abstract class MagicScroll extends Scroll {
 	
 	int numUses;
 	String title;
+	Boolean isMystery = true;
 
 	
 	public MagicScroll(String title, Integer numUses) {
@@ -14,7 +15,32 @@ public abstract class MagicScroll extends Scroll {
 	}
 	
 	@Override
+	public String getName() {
+		// if name of the scroll is mystery, return a generic mystery title
+		if (isMystery) {
+			return "Scroll of ???";
+		}
+		// if the name of the scroll has been revealed, return the actual title
+		return this.title;
+	}
+	
+	
+	public void reveal() {
+		// reveal the type of scroll
+		this.isMystery = false;
+		// display a message saying the scroll was revealed
+		Utility.displayMessage("The mysterious scroll is revealed to be: "+this.getName());
+	}
+	
+	
+	@Override
 	public void beRead() {
+		
+		if (isMystery) {
+			
+			// the type of scroll is revealed if it was a mystery
+			this.reveal();
+		}
 		
 		if (numUses>0) {
 		
