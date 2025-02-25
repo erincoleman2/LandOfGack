@@ -6,6 +6,7 @@ import edu.gac.mcs178.gack.domain.Place;
 import edu.gac.mcs178.gack.domain.Scroll;
 import edu.gac.mcs178.gack.domain.TeleportationScroll;
 import edu.gac.mcs178.gack.domain.EnlightenmentScroll;
+import edu.gac.mcs178.gack.domain.IdentificationScroll;
 import edu.gac.mcs178.gack.domain.Thing;
 import edu.gac.mcs178.gack.domain.Witch;
 import edu.gac.mcs178.gack.domain.Wizard;
@@ -59,7 +60,7 @@ public class GackWorld extends World {
 		
 		lounge.gain(new Thing("Karl's glasses"));
 		
-		library.gain(new EnlightenmentScroll("Scroll of Enlightenment", 2));
+		dormitory.gain(new EnlightenmentScroll("Scroll of Enlightenment", 2));
 		
 		String[] someTitles = {"War and Peace", "Iliad", "Collected Works of Rilke"};
 		for (String title : someTitles) {
@@ -73,6 +74,10 @@ public class GackWorld extends World {
 		alumniHall.gain(new TeleportationScroll("Scroll of Teleportation", 2));
 		
 		dormitory.gain(new frogScroll("Scroll of Frog Transformation"));
+		dormitory.gain(new IdentificationScroll("Scroll of Identification",5));
+		
+		
+		
 		
 		setPlayer(new Person("player", dormitory));
 	}
