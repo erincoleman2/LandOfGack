@@ -72,7 +72,7 @@ public class GackWorld extends World {
 		
 		alumniHall.gain(new TeleportationScroll("Scroll of Teleportation", 2));
 		
-		offices.gain(new frogScroll("Scroll of Frog Transformation"));
+		dormitory.gain(new frogScroll("Scroll of Frog Transformation"));
 		
 		setPlayer(new Person("player", dormitory));
 	}
