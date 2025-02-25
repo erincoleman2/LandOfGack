@@ -58,7 +58,7 @@ public class GackWorld extends World {
 		
 		lounge.gain(new Thing("Karl's glasses"));
 		
-		dormitory.gain(new EnlightenmentScroll("Scroll of Enlightenment", 2));
+		library.gain(new EnlightenmentScroll("Scroll of Enlightenment", 2));
 		
 		String[] someTitles = {"War and Peace", "Iliad", "Collected Works of Rilke"};
 		for (String title : someTitles) {
@@ -69,7 +69,7 @@ public class GackWorld extends World {
 		
 		dormitory.gain(new Scroll("Late Lab Report"));
 		
-		dormitory.gain(new TeleportationScroll("Scroll of Teleportation", 2));
+		alumniHall.gain(new TeleportationScroll("Scroll of Teleportation", 2));
 
 		
 		setPlayer(new Person("player", dormitory));
