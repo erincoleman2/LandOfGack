@@ -5,13 +5,14 @@ import edu.gac.mcs178.gack.Utility;
 public abstract class MagicScroll extends Scroll {
 	
 	int numUses;
-	String title;
 	Boolean isMystery = true;
+	String name;
 
 	
 	public MagicScroll(String title, Integer numUses) {
 		super(title);
 		this.numUses = numUses;
+		this.name = title;
 	}
 	
 	@Override
@@ -21,7 +22,7 @@ public abstract class MagicScroll extends Scroll {
 			return "Scroll of ???";
 		}
 		// if the name of the scroll has been revealed, return the actual title
-		return this.title;
+		return this.name;
 	}
 	
 	

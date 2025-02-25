@@ -7,8 +7,8 @@ import edu.gac.mcs178.gack.Utility;
 
 public class Scroll extends Thing{
 	
-	public Scroll(String title) {
-		super(title);
+	public Scroll(String name) {
+		super(name);
 	}
 
 	public void beRead() {
