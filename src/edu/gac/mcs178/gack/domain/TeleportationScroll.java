@@ -3,8 +3,6 @@ package edu.gac.mcs178.gack.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.gac.mcs178.gack.Utility;
-
 public class TeleportationScroll extends MagicScroll {
 
 	public TeleportationScroll(String title, Integer numUses) {
@@ -14,8 +12,10 @@ public class TeleportationScroll extends MagicScroll {
 
 	@Override
 	void doMagic() {
+		
+
 		// If player does not have scroll of enlightenment, they teleport to the library
-		// If they do have the scroll, they teleport to the 
+		// If they do have the scroll, they teleport to the computer lab
 		
 		
 		// get list of possessions
@@ -45,4 +45,5 @@ public class TeleportationScroll extends MagicScroll {
 		// send the player to the location
 		this.getOwner().moveTo(placeToGo);
 	}
+
 }

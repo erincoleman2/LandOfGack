@@ -10,8 +10,6 @@ public class Person {
 	private String name;
 	private Place place;
 	private List<Thing> possessions;
-	private List<String> magicalPowers;
-	
 	public String getName() { return name; }
 	public void setName(String name) { this.name = name; }
 	public Place getPlace() { return place; }
@@ -114,13 +112,13 @@ public class Person {
 		if (this.equals(thing.getOwner())){
 
 			// player no longer owns thing
-			this.possessions.remove(thing);
+			thing.becomeUnowned();
 			// Thing needs to identify recipient as the owner    
 			thing.setOwner(recipient);
 		    // recipient needs to add to a list of things he/she own  
 			recipient.possessions.add(thing);
 		
-		    // Person say something like “here we go, XXX”.
+		    // Person say something like “here we go, x”.
 			this.say("Here is the "+thing+", "+ recipient);
 			
 		}
