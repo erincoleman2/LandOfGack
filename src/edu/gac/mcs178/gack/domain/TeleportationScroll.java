@@ -31,19 +31,12 @@ public class TeleportationScroll extends MagicScroll {
 				}
 		}
 		
-	// get list of locations
-	ArrayList<Place> locations = this.getOwner().getPlace().getWorld().getLocations();
+	// get place to send the owner
+	Place placeToGo = this.getOwner().getPlace().getWorld().getSpecificLocation(nameOfPlaceToGo);
 	
-	// Find the requested location
-	Place placeToGo = locations.get(0);
-		for (Place place : locations) {
-			if (place.getName()==nameOfPlaceToGo) {
-				placeToGo = place; // set to the place we want the player to go
-			}
-		}
-		
-		// send the player to the location
-		this.getOwner().moveTo(placeToGo);
+
+	// send the player to the location
+	this.getOwner().moveTo(placeToGo);
 	}
 
 }

@@ -31,4 +31,22 @@ public class World {
 		this.locations.add(place);
 		
 	}
+	
+	public Place getSpecificLocation(String name) {
+		
+		// get list of locations
+		ArrayList<Place> locations = this.getLocations();
+		
+		// Loop through locations to find the requested location
+		Place placeToGo = locations.get(0); // start at beginning of list
+			for (Place place : locations) {
+				if (place.getName()==name) {
+					placeToGo = place; // set to the place we want the player to go and break loop
+					break;
+				}
+			}
+		
+
+		return placeToGo;
+	}
 }

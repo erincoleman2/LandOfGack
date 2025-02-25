@@ -22,6 +22,7 @@ public class Person {
 		this.place = place;
 		this.possessions = new ArrayList<Thing>();
 		place.gain(this);
+
 	}
 	
 	public void say(String text) {
