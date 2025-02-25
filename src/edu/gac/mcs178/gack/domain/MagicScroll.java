@@ -38,7 +38,6 @@ public abstract class MagicScroll extends Scroll {
 	public void beRead() {
 		
 		if (isMystery) {
-			
 			// the type of scroll is revealed if it was a mystery
 			this.reveal();
 		}
