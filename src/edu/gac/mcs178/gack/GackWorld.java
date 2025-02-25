@@ -9,6 +9,7 @@ import edu.gac.mcs178.gack.domain.EnlightenmentScroll;
 import edu.gac.mcs178.gack.domain.Thing;
 import edu.gac.mcs178.gack.domain.Witch;
 import edu.gac.mcs178.gack.domain.Wizard;
+import edu.gac.mcs178.gack.domain.frogScroll;
 
 
 public class GackWorld extends World {
@@ -70,7 +71,8 @@ public class GackWorld extends World {
 		dormitory.gain(new Scroll("Late Lab Report"));
 		
 		alumniHall.gain(new TeleportationScroll("Scroll of Teleportation", 2));
-
+		
+		dormitory.gain(new frogScroll("Scroll of Frog Transformation"));
 		
 		setPlayer(new Person("player", dormitory));
 	}
