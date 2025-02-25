@@ -2,7 +2,6 @@ package edu.gac.mcs178.gack.domain;
 
 
 import edu.gac.mcs178.gack.Utility;
-import edu.gac.mcs178.gack.domain.Witch;
 
 public class frogScroll extends MagicScroll {
 	

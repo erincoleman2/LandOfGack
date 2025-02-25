@@ -4,8 +4,7 @@ import edu.gac.mcs178.gack.domain.Person;
 import edu.gac.mcs178.gack.domain.Place;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+
 
 public class World {
 	
